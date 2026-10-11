@@ -72,8 +72,7 @@ p.fill{background-image:none;-webkit-background-clip:initial;background-clip:ini
 .video-som .vs-pill svg{flex-shrink:0;color:rgb(26,205,134);}
 .video-modal{position:fixed;inset:0;z-index:1100;display:none;align-items:center;justify-content:center;background:rgba(0,2,14,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px;}
 .video-modal.aberto{display:flex;}
-.video-modal-box{width:min(100%,1000px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.22);box-shadow:0 30px 90px rgba(0,0,0,0.7);background:rgb(11,13,33);}
-.video-modal-box wistia-player{display:block;width:100%;height:100%;}
+.video-hero.destacado{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(calc(100vw - 32px),1000px);margin:0;z-index:1101;box-shadow:0 30px 90px rgba(0,0,0,0.75);}
 .video-modal-fechar{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,0.7);font-size:34px;line-height:1;cursor:pointer;font-family:inherit;z-index:2;}
 .video-modal-fechar:hover{color:#fff;}
 @keyframes rolar{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -303,7 +302,6 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
 <!-- LIGHTBOX DO VÍDEO -->
 <div class="video-modal" id="video-modal">
   <button class="video-modal-fechar" id="video-modal-fechar" aria-label="Fechar">×</button>
-  <div class="video-modal-box" id="video-modal-box"></div>
 </div>
 
 <!-- MODAL DE CAPTURA -->
@@ -361,30 +359,25 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
     location.href = DESTINO;
   });
 
-  // vídeo: ativar som em pop-up de foco (reinicia do zero com áudio)
+  // vídeo: ativar som em pop-up de foco (sem mover o player — sem reinicialização)
   var botaoSom = document.getElementById("video-som");
   var videoModal = document.getElementById("video-modal");
-  var videoBox = document.getElementById("video-modal-box");
   var videoHero = document.querySelector(".video-hero");
-  function comSom(wp) {
-    try { wp.muted = false; wp.volume = 1; wp.currentTime = 0; wp.play(); } catch (e) {}
-    setTimeout(function () { try { wp.muted = false; wp.volume = 1; wp.play(); } catch (e) {} }, 700);
-  }
   function abrirVideo() {
     var wp = document.querySelector("wistia-player");
+    try { wp.muted = false; wp.volume = 1; wp.currentTime = 0; wp.play(); } catch (e) {}
     videoModal.classList.add("aberto");
-    videoBox.appendChild(wp);
-    comSom(wp);
+    videoHero.classList.add("destacado");
+    document.body.style.overflow = "hidden";
     if (botaoSom) { botaoSom.remove(); botaoSom = null; }
+    setTimeout(function () { var w = document.querySelector("wistia-player"); try { w.muted = false; w.volume = 1; } catch (e) {} }, 500);
   }
   function fecharVideo() {
-    var wp = videoBox.querySelector("wistia-player");
+    var wp = document.querySelector("wistia-player");
     videoModal.classList.remove("aberto");
-    if (wp) {
-      videoHero.appendChild(wp);
-      var pausar = function () { try { wp.pause(); } catch (e) {} };
-      pausar(); setTimeout(pausar, 400); setTimeout(pausar, 1000);
-    }
+    videoHero.classList.remove("destacado");
+    document.body.style.overflow = "";
+    try { wp.pause(); } catch (e) {}
   }
   if (botaoSom) botaoSom.addEventListener("click", abrirVideo);
   document.getElementById("video-modal-fechar").addEventListener("click", fecharVideo);
