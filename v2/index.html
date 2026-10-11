@@ -111,6 +111,10 @@ section{padding:52px 0;}
 .depo .quem b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-0.01em;}
 .depo .quem span{display:block;font-size:12.5px;font-weight:500;color:var(--branco-50);margin-top:2px;}
 .estrelas{color:rgb(247,209,78);font-size:13px;letter-spacing:2px;}
+.depo-extra{display:none;}
+.grade-depo.expandida .depo-extra{display:flex;}
+.ver-mais{display:block;margin:20px auto 0;background:none;border:none;font-family:inherit;font-size:14px;font-weight:500;color:var(--branco-70);text-decoration:underline;text-underline-offset:4px;cursor:pointer;}
+.ver-mais:hover{color:#fff;}
 .prova-sub{text-align:center;max-width:560px;margin:34px auto 0;}
 .prova-sub .destaque{font-size:19px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;}
 .prova-sub .resto{font-size:14px;font-weight:500;line-height:1.5;color:var(--branco-50);margin-top:10px;}
@@ -125,7 +129,6 @@ section{padding:52px 0;}
 .oferta{position:relative;overflow:hidden;text-align:center;}
 .oferta::before{content:"";position:absolute;left:50%;top:-140px;transform:translateX(-50%);width:680px;height:340px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,51,255,0.35) 0%, rgba(0,51,255,0) 100%);pointer-events:none;}
 .oferta .selo{position:relative;z-index:1;}
-.oferta .caixa-bonus{width:190px;margin:0 auto 18px;position:relative;z-index:1;}
 .oferta h2{font-size:clamp(28px,7vw,38px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;margin-top:18px;position:relative;z-index:1;}
 .oferta .sub{font-size:15.5px;font-weight:500;line-height:1.5;color:var(--branco-70);max-width:440px;margin:14px auto 0;position:relative;z-index:1;}
 .beneficios{display:flex;flex-direction:column;gap:12px;max-width:442px;margin:26px auto 0;text-align:left;position:relative;z-index:1;}
@@ -257,22 +260,23 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
         <p class="fala">“Eu não queria mais depender de várias ferramentas separadas para resolver coisas simples do dia a dia. Hoje peço análise de vendas, ideias de campanha, textos e relatórios. A maior diferença é que a entrega vem mais completa, não só uma resposta solta.”</p>
         <div class="quem"><img src="../assets/frEyM909TO6sv0b3LQKWCOzpbk.jpg" alt="André Martins" loading="lazy"><div><b>André Martins</b><span>Empresário</span></div></div>
       </div>
-      <div class="depo aparece">
+      <div class="depo aparece depo-extra">
         <div class="estrelas" aria-hidden="true">★★★★★</div>
         <p class="fala">“O que mais me ganhou foi conseguir alternar entre modelos diferentes sem ficar abrindo várias plataformas. Uso para revisar código, documentar processos e transformar reuniões em tarefas. Economiza tempo e deixa o fluxo bem mais limpo.”</p>
         <div class="quem"><img src="../assets/0cU8BqRHEhKGHJE44yuJRnsQoZk.jpg" alt="Juliana Ferreira" loading="lazy"><div><b>Juliana Ferreira</b><span>Desenvolvedora</span></div></div>
       </div>
-      <div class="depo aparece">
+      <div class="depo aparece depo-extra">
         <div class="estrelas" aria-hidden="true">★★★★★</div>
         <p class="fala">“Eu atendia clientes com muito material espalhado: planilhas, anotações, PDFs e prints. Agora consigo transformar tudo em diagnóstico, apresentação e plano de ação com muito menos retrabalho. Parece que ganhei uma camada extra de produção.”</p>
         <div class="quem"><img src="../assets/IPb9S5YrEI8YbvQ1lahsFyAG5Yo.jpg" alt="Patrícia Lima" loading="lazy"><div><b>Patrícia Lima</b><span>Consultora de Negócios</span></div></div>
       </div>
-      <div class="depo aparece">
+      <div class="depo aparece depo-extra">
         <div class="estrelas" aria-hidden="true">★★★★★</div>
         <p class="fala">“Antes eu usava IA para ideias de copy. Hoje uso para montar campanha inteira: pesquisa, ângulos, criativos, páginas e análise. O ganho não foi só velocidade, foi sair do rascunho e chegar em algo muito mais próximo do pronto.”</p>
         <div class="quem"><img src="../assets/rSRLDS2wCzWkecgQAAiCMUjqy3w.jpg" alt="Bruno Almeida" loading="lazy"><div><b>Bruno Almeida</b><span>Gestor de Marketing</span></div></div>
       </div>
     </div>
+    <button class="ver-mais" id="ver-mais">Ver mais depoimentos</button>
     <div class="prova-sub aparece">
       <p class="destaque fill">Já são mais de 1 Milhão de usuários atendidos pela Inner AI.</p>
       <p class="resto">Advogados, gestores, professores, empresários, líderes, donos de agência, desenvolvedores, consultores e dezenas de outros profissionais.</p>
@@ -289,7 +293,6 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
 <!-- 05. OFERTA E CONVERSÃO -->
 <section class="oferta">
   <div class="container">
-    <img class="caixa-bonus aparece" src="https://static-assets.innerai.com/content/992e7511-af8a-4569-9f3c-9cda701c4669_file.webp" alt="Bônus surpresa" loading="lazy">
     <div class="selo aparece"><span class="ouro">🔥 OFERTA RELÂMPAGO</span></div>
     <h2 class="fill aparece">Super Desconto +<br>Bônus Exclusivos.</h2>
     <p class="sub aparece">A condição especial será liberada somente para os participantes do <b style="color:#fff;">Grupo Secreto do WhatsApp</b>.</p>
@@ -411,6 +414,14 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
     }
     try { window.dataLayer.push({ event: "lead_gen_bf", lead_funnel: FUNIL }); } catch(e) {}
     location.href = DESTINO;
+  });
+
+  // ver mais depoimentos
+  var verMais = document.getElementById("ver-mais");
+  verMais.addEventListener("click", function () {
+    document.querySelector(".grade-depo").classList.add("expandida");
+    document.querySelectorAll(".depo-extra").forEach(function (d) { d.classList.add("na-tela"); });
+    verMais.remove();
   });
 
   // animação de aparição
