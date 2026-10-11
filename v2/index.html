@@ -84,6 +84,8 @@ a{text-decoration:none;color:inherit;}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta-grad);border:none;border-radius:90px;padding:18px 30px;font-family:inherit;font-size:16px;font-weight:700;letter-spacing:-0.01em;color:#fff;cursor:pointer;box-shadow:0 0 34px 0 var(--cta-glow);transition:transform .15s ease, box-shadow .15s ease;width:100%;max-width:420px;}
 .cta:hover{transform:translateY(-1px) scale(1.01);box-shadow:0 0 44px 0 var(--cta-glow);}
 .cta svg{width:22px;height:22px;flex-shrink:0;}
+.cta-2l{flex-direction:column;gap:3px;padding:14px 30px;}
+.cta-2l .cta-l2{font-size:12.5px;font-weight:500;letter-spacing:0;opacity:.92;}
 .cta-apoio{font-size:13px;font-weight:500;color:var(--branco-50);margin-top:12px;}
 .cta-wrap{margin-top:24px;position:relative;z-index:3;}
 
@@ -230,8 +232,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
       </div>
     </div>
     <div class="cta-wrap" style="text-align:center;">
-      <button class="cta js-abrir">QUERO GARANTIR MEU DESCONTO</button>
-      <p class="cta-apoio">Entrar no Grupo Secreto do WhatsApp →</p>
+      <button class="cta cta-2l js-abrir"><span>QUERO GARANTIR MEU DESCONTO</span><span class="cta-l2">Entrar no Grupo Secreto do WhatsApp →</span></button>
     </div>
   </div>
 </section>
