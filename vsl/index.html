@@ -11,7 +11,9 @@
 <link rel="icon" href="./assets/lt83bavZXg5PYhSVxwU5xfF8E5I.png">
 <link rel="preload" as="font" type="font/woff2" href="./assets/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./assets/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2" crossorigin>
-<link rel="preload" as="image" href="./assets/hero-apps-opt.webp">
+<link rel="preconnect" href="https://fast.wistia.com">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/pz6ssjvyi3.js" async type="module"></script>
 
 
 <!-- ============================================================
@@ -61,7 +63,8 @@ p.fill{background-image:none;-webkit-background-clip:initial;background-clip:ini
 .selo .ouro{background-image:none;-webkit-background-clip:initial;background-clip:initial;color:rgb(12,10,2);}
 .selo .sep{color:rgba(0,0,0,0.35);font-weight:400;}
 .hero h1{font-size:clamp(30px,8vw,46px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin:24px auto 0;max-width:620px;}
-.hero .mockup{display:block;margin:26px auto 0;width:min(100%,560px);height:auto;max-height:36svh;object-fit:contain;}
+.video-hero{width:min(100%,640px);margin:26px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);box-shadow:0 18px 60px rgba(0,30,160,0.35);background:rgb(11,13,33);}
+.video-hero wistia-player{display:block;width:100%;height:100%;}
 @keyframes rolar{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .hero .sub{font-size:17px;font-weight:400;line-height:1.5;letter-spacing:-0.02em;color:var(--branco-70);margin:30px auto 0;max-width:420px;}
 .hero .sub b{color:#fff;}
@@ -154,7 +157,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
   /* hero: mais presença, sem esticar em monitores altos */
   .hero{padding-top:48px;min-height:min(100svh,880px);}
   .hero h1{font-size:54px;max-width:760px;}
-  .hero .mockup{width:min(100%,640px);max-height:none;margin-top:32px;}
+  .video-hero{width:min(100%,680px);margin-top:32px;}
   .hero .sub{font-size:18px;max-width:520px;margin-top:32px;}
   .selo{font-size:15px;padding:10px 20px;}
   /* títulos de seção maiores */
@@ -183,7 +186,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
 /* desktop largo: hero ainda mais generoso */
 @media (min-width:1200px){
   .hero h1{font-size:60px;}
-  .hero .mockup{width:700px;}
+  .video-hero{width:720px;}
 }
 </style>
 </head>
@@ -196,7 +199,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
   <div class="container">
     <div class="selo"><span class="ouro">⚡ OFERTA RELÂMPAGO</span><span class="sep">|</span><span>Inner AI</span></div>
     <h1 class="fill">+50 IAs Premium com uma condição exclusiva!</h1>
-    <img class="mockup" src="./assets/hero-apps-opt.webp" alt="Grok, DeepSeek, Claude, Gemini e Perplexity na Inner AI" width="1120" height="347" fetchpriority="high">
+    <div class="video-hero"><wistia-player media-id="pz6ssjvyi3" aspect="1.7777777777777777"></wistia-player></div>
   </div>
   <div class="container">
     <p class="sub">Entre no <b>Grupo Secreto</b> para ter acesso ao <b>Super Desconto + Bônus Especiais</b>.</p>
