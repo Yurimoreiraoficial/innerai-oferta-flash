@@ -1,2 +1,0 @@
-import{t as e}from"./rolldown-runtime.Dh6celcD.mjs";import{A as t,L as n,l as r,s as i,w as a,z as o}from"./react.N6WDMTqS.mjs";import{Q as s,a as c}from"./framer.joQoGTny.mjs";function l(){return{onTapStart:()=>{setTimeout(()=>{o.removeIOSModalFix&&o.removeIOSModalFix()},100)}}}function u(e){return n=>(t(c),r(e,{...n,...l(n)}))}var d=e((()=>{n(),i(),a(),s(),u.displayName=`Variant1CloseButton`}));export{u as n,d as t};
-//# sourceMappingURL=CloseButton.DWBolwHi.mjs.map

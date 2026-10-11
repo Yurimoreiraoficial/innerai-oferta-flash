@@ -1,2 +1,0 @@
-import{t as e}from"./rolldown-runtime.Dh6celcD.mjs";function t(e,t){return{description:`As melhores IAs em um só lugar — Acesse diversos modelos, cursos, tutoriais e tenha acesso a um suporte humano para te ajudar com as melhores práticas para aplicar IA no seu dia a dia.`,favicon:`./assets/lt83bavZXg5PYhSVxwU5xfF8E5I_2.png`,robots:`max-image-preview:large`,socialImage:`./assets/NGMnwL4En0GqEXxBhrOY3jYwNI.png`,title:`Inner AI`}}var n=e((()=>{}));export{t as n,n as t};
-//# sourceMappingURL=shared-lib.C_kGP41Q.mjs.map
