@@ -66,8 +66,8 @@ p.fill{background-image:none;-webkit-background-clip:initial;background-clip:ini
 /* ===== header logo ===== */
 
 /* ===== 02 Hero ===== */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:40px 0 56px;text-align:center;position:relative;overflow:hidden;box-sizing:border-box;}
-.hero::after{content:"";position:absolute;left:50%;bottom:-180px;transform:translateX(-50%);width:640px;height:320px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,51,255,0.38) 0%, rgba(0,51,255,0) 100%);pointer-events:none;}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:40px 0 56px;text-align:center;position:relative;box-sizing:border-box;}
+.hero::after{content:"";position:absolute;left:50%;bottom:-200px;transform:translateX(-50%);width:min(760px,160vw);height:400px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,51,255,0.30) 0%, rgba(0,51,255,0) 70%);pointer-events:none;z-index:0;}
 .selo{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700;letter-spacing:-0.02em;background:var(--ouro-grad);color:rgb(12,10,2);box-shadow:0 0 26px rgba(247,209,78,0.28);}
 .selo .ouro{background-image:none;-webkit-background-clip:initial;background-clip:initial;color:rgb(12,10,2);}
 .selo .sep{color:rgba(0,0,0,0.35);font-weight:400;}
@@ -122,8 +122,8 @@ section{padding:52px 0;}
 .faixa-logos img{height:44px;width:auto;max-width:none;opacity:.85;}
 
 /* ===== 05 oferta final ===== */
-.oferta{position:relative;overflow:hidden;text-align:center;}
-.oferta::before{content:"";position:absolute;left:50%;top:-140px;transform:translateX(-50%);width:680px;height:340px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,51,255,0.35) 0%, rgba(0,51,255,0) 100%);pointer-events:none;}
+.oferta{position:relative;text-align:center;}
+.oferta::before{content:"";position:absolute;left:50%;top:-200px;transform:translateX(-50%);width:min(760px,160vw);height:400px;background:radial-gradient(50% 50% at 50% 50%, rgba(0,51,255,0.28) 0%, rgba(0,51,255,0) 70%);pointer-events:none;z-index:0;}
 .oferta .selo{position:relative;z-index:1;}
 .oferta h2{font-size:clamp(28px,7vw,38px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;margin-top:18px;position:relative;z-index:1;}
 .oferta .sub{font-size:15.5px;font-weight:400;line-height:1.5;color:var(--branco-70);max-width:440px;margin:14px auto 0;position:relative;z-index:1;}
