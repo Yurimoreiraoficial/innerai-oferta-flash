@@ -65,6 +65,17 @@ p.fill{background-image:none;-webkit-background-clip:initial;background-clip:ini
 .hero h1{font-size:clamp(30px,8vw,46px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin:24px auto 0;max-width:620px;}
 .video-hero{width:min(100%,640px);margin:26px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);box-shadow:0 18px 60px rgba(0,30,160,0.35);background:rgb(11,13,33);}
 .video-hero wistia-player{display:block;width:100%;height:100%;}
+.video-hero{position:relative;}
+.video-som{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;background:rgba(1,3,20,0.3);border:none;cursor:pointer;font-family:inherit;padding:0;}
+.video-som .vs-pill{display:flex;align-items:center;gap:12px;padding:13px 22px;border-radius:999px;background:rgba(1,3,20,0.82);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:13.5px;font-weight:500;line-height:1.35;text-align:left;box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+.video-som .vs-pill b{font-weight:700;}
+.video-som .vs-pill svg{flex-shrink:0;color:rgb(26,205,134);}
+.video-modal{position:fixed;inset:0;z-index:1100;display:none;align-items:center;justify-content:center;background:rgba(0,2,14,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px;}
+.video-modal.aberto{display:flex;}
+.video-modal-box{width:min(100%,1000px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.22);box-shadow:0 30px 90px rgba(0,0,0,0.7);background:rgb(11,13,33);}
+.video-modal-box wistia-player{display:block;width:100%;height:100%;}
+.video-modal-fechar{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,0.7);font-size:34px;line-height:1;cursor:pointer;font-family:inherit;z-index:2;}
+.video-modal-fechar:hover{color:#fff;}
 @keyframes rolar{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 .hero .sub{font-size:17px;font-weight:400;line-height:1.5;letter-spacing:-0.02em;color:var(--branco-70);margin:30px auto 0;max-width:420px;}
 .hero .sub b{color:#fff;}
@@ -215,7 +226,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
     <div class="selo"><span class="ouro">⚡ OFERTA RELÂMPAGO</span><span class="sep">|</span><span>Inner AI</span></div>
     <h1 class="fill">Veja tudo que a Inner AI é capaz de fazer</h1>
     <p style="margin:20px auto 0;font-size:14.5px;font-weight:700;letter-spacing:-0.01em;color:rgba(255,255,255,0.8);">Assista ao vídeo completo ↓</p>
-    <div class="video-hero" style="margin-top:14px;"><wistia-player media-id="pz6ssjvyi3" aspect="1.7777777777777777" silent-auto-play="allow" autoplay="true" muted="true" controls-visible-on-load="false" player-color="1ACD86"></wistia-player></div>
+    <div class="video-hero" style="margin-top:14px;"><wistia-player media-id="pz6ssjvyi3" aspect="1.7777777777777777" silent-auto-play="allow" autoplay="true" muted="true" controls-visible-on-load="false" player-color="1ACD86"></wistia-player><button class="video-som" id="video-som" type="button"><span class="vs-pill"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg><span><b>Seu vídeo já começou</b><br>Clique para ativar o som</span></span></button></div>
   </div>
   <div class="container">
     <div class="cta-wrap">
@@ -289,6 +300,12 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
 <!-- símbolo do logo p/ reuso no rodapé -->
 <svg width="0" height="0" style="position:absolute"><defs><g id="logo-paths"><path d="M2.25352 19.7183H0V0H2.25352V19.7183Z" fill="currentColor"/><path d="M5.35871 19.7183V5.6338H7.1897L7.47139 7.1831H7.61223C7.98782 6.71362 8.5512 6.29108 9.30237 5.91549C10.0535 5.53991 10.8986 5.35211 11.8376 5.35211C12.908 5.35211 13.8658 5.60563 14.7108 6.11268C15.5747 6.60094 16.2507 7.29578 16.739 8.19718C17.2273 9.09859 17.4714 10.1221 17.4714 11.2676V19.7183H15.3587V11.2676C15.3587 10.5352 15.1897 9.86854 14.8517 9.26761C14.5136 8.66667 14.0535 8.19718 13.4714 7.85915C12.8892 7.50235 12.2507 7.32394 11.5559 7.32394C10.8235 7.32394 10.1381 7.51174 9.49956 7.88732C8.87984 8.24413 8.38219 8.72301 8.0066 9.32394C7.64979 9.92488 7.47139 10.5728 7.47139 11.2676V19.7183H5.35871Z" fill="currentColor"/><path d="M20.2971 19.7183V5.6338H22.1281L22.4098 7.1831H22.5506C22.9262 6.71362 23.4896 6.29108 24.2408 5.91549C24.9919 5.53991 25.837 5.35211 26.776 5.35211C27.8464 5.35211 28.8041 5.60563 29.6492 6.11268C30.5131 6.60094 31.1891 7.29578 31.6774 8.19718C32.1656 9.09859 32.4098 10.1221 32.4098 11.2676V19.7183H30.2971V11.2676C30.2971 10.5352 30.1281 9.86854 29.79 9.26761C29.452 8.66667 28.9919 8.19718 28.4098 7.85915C27.8276 7.50235 27.1891 7.32394 26.4943 7.32394C25.7619 7.32394 25.0764 7.51174 24.4379 7.88732C23.8182 8.24413 23.3206 8.72301 22.945 9.32394C22.5882 9.92488 22.4098 10.5728 22.4098 11.2676V19.7183H20.2971Z" fill="currentColor"/><path d="M41.151 20C39.8927 20 38.7472 19.6901 37.7143 19.0704C36.6815 18.4507 35.8646 17.5869 35.2636 16.4789C34.6815 15.3709 34.3904 14.1033 34.3904 12.6761C34.3904 11.2488 34.6815 9.98122 35.2636 8.87324C35.8646 7.76526 36.6815 6.90141 37.7143 6.28169C38.7472 5.66197 39.8927 5.35211 41.151 5.35211C42.3528 5.35211 43.4514 5.64319 44.4467 6.22535C45.442 6.80751 46.2214 7.61502 46.7848 8.64789C47.3481 9.66197 47.6298 10.8169 47.6298 12.1127C47.6298 12.8639 47.5829 13.3803 47.489 13.662H36.5031C36.6345 14.9765 37.1416 16.0376 38.0242 16.8451C38.9068 17.6338 39.9491 18.0282 41.151 18.0282C41.996 18.0282 42.7472 17.831 43.4045 17.4366C44.0805 17.0423 44.597 16.4883 44.9538 15.7746H47.2073C46.719 17.1268 45.9491 18.169 44.8974 18.9014C43.8646 19.6338 42.6157 20 41.151 20ZM45.5172 11.6901C45.442 10.4131 44.9913 9.37089 44.165 8.56338C43.3575 7.73709 42.3528 7.32394 41.151 7.32394C39.8927 7.32394 38.8411 7.73709 37.996 8.56338C37.151 9.37089 36.6533 10.4131 36.5031 11.6901H45.5172Z" fill="currentColor"/><path d="M49.5962 19.7183V5.6338H51.4271L51.7088 7.04225H51.8497C52.1689 6.55399 52.5163 6.19718 52.8919 5.97183C53.2675 5.74648 53.8121 5.6338 54.5257 5.6338H56.9201V7.60564H54.8074C53.8309 7.60564 53.0703 7.87793 52.5257 8.42253C51.9811 8.94836 51.7088 9.70892 51.7088 10.7042V19.7183H49.5962Z" fill="currentColor"/><path d="M81.8544 19.7183H77.8825L76.3896 15.3521H67.967L66.4741 19.7183H62.5022L69.5163 0H74.8403L81.8544 19.7183ZM71.9107 3.88732L69.0938 12.0845H75.2628L72.4741 3.88732H71.9107Z" fill="currentColor"/><path d="M86.3801 19.7183H82.7181V0H86.3801V19.7183Z" fill="currentColor"/></g></defs></svg>
 
+<!-- LIGHTBOX DO VÍDEO -->
+<div class="video-modal" id="video-modal">
+  <button class="video-modal-fechar" id="video-modal-fechar" aria-label="Fechar">×</button>
+  <div class="video-modal-box" id="video-modal-box"></div>
+</div>
+
 <!-- MODAL DE CAPTURA -->
 <div class="modal-fundo" id="modal">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
@@ -343,6 +360,36 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
     if (d.length !== 11) { alert("Preencha um número de WhatsApp válido."); return; }
     location.href = DESTINO;
   });
+
+  // vídeo: ativar som em pop-up de foco (reinicia do zero com áudio)
+  var botaoSom = document.getElementById("video-som");
+  var videoModal = document.getElementById("video-modal");
+  var videoBox = document.getElementById("video-modal-box");
+  var videoHero = document.querySelector(".video-hero");
+  function comSom(wp) {
+    try { wp.muted = false; wp.volume = 1; wp.currentTime = 0; wp.play(); } catch (e) {}
+    setTimeout(function () { try { wp.muted = false; wp.volume = 1; wp.play(); } catch (e) {} }, 700);
+  }
+  function abrirVideo() {
+    var wp = document.querySelector("wistia-player");
+    videoModal.classList.add("aberto");
+    videoBox.appendChild(wp);
+    comSom(wp);
+    if (botaoSom) { botaoSom.remove(); botaoSom = null; }
+  }
+  function fecharVideo() {
+    var wp = videoBox.querySelector("wistia-player");
+    videoModal.classList.remove("aberto");
+    if (wp) {
+      videoHero.appendChild(wp);
+      var pausar = function () { try { wp.pause(); } catch (e) {} };
+      pausar(); setTimeout(pausar, 400); setTimeout(pausar, 1000);
+    }
+  }
+  if (botaoSom) botaoSom.addEventListener("click", abrirVideo);
+  document.getElementById("video-modal-fechar").addEventListener("click", fecharVideo);
+  videoModal.addEventListener("click", function (ev) { if (ev.target === videoModal) fecharVideo(); });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && videoModal.classList.contains("aberto")) fecharVideo(); });
 
   // FAQ sanfonada: abre um, fecha os demais
   document.querySelectorAll(".faq-item summary").forEach(function (s) {
