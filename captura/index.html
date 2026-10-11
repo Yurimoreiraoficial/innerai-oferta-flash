@@ -365,7 +365,7 @@ footer .legal a{text-decoration:underline;text-underline-offset:3px;}
   function nomeAleatorio() {
     var masc = Math.random() < 0.8;
     var lista = masc ? NOMES_M : NOMES_F;
-    return lista[Math.floor(Math.random()*lista.length)] + " " + SOBRENOMES[Math.floor(Math.random()*SOBRENOMES.length)];
+    return lista[Math.floor(Math.random()*lista.length)];
   }
   var notif = document.getElementById("notif-entrada");
   var notifTexto = document.getElementById("notif-texto");
