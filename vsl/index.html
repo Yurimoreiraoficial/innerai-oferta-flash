@@ -72,7 +72,7 @@ p.fill{background-image:none;-webkit-background-clip:initial;background-clip:ini
 .video-som .vs-pill svg{flex-shrink:0;color:rgb(26,205,134);}
 .video-modal{position:fixed;inset:0;z-index:1100;display:none;align-items:center;justify-content:center;background:rgba(0,2,14,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px;}
 .video-modal.aberto{display:flex;}
-.video-hero.destacado{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(calc(100vw - 32px),1000px);margin:0;z-index:1101;box-shadow:0 30px 90px rgba(0,0,0,0.75);}
+.video-hero.destacado{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;z-index:1101;box-shadow:0 30px 90px rgba(0,0,0,0.75);width:min(calc(100vw - 32px),calc((100vh - 40px)*1.7778),1000px);width:min(calc(100vw - 32px),calc((100svh - 40px)*1.7778),1000px);}
 .video-modal-fechar{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,0.7);font-size:34px;line-height:1;cursor:pointer;font-family:inherit;z-index:2;}
 .video-modal-fechar:hover{color:#fff;}
 @keyframes rolar{from{transform:translateX(0);}to{transform:translateX(-50%);}}
